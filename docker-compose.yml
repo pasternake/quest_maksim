@@ -1,5 +1,4 @@
 services:
-
   db:
     image: "postgres:14"
     environment:
@@ -20,7 +19,7 @@ services:
       - "DATABASE_URL=postgres://postgres@db/postgres"
       - "DJANGO_DEBUG=true"
     ports:
-      - "8000:8000"
+      - "8008:8000"
     volumes:
       - .:/src
       - django-media:/src/media

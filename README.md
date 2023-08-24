@@ -12,29 +12,29 @@
 
 ## :triangular_flag_on_post: Features
 
-- Django 4.2.x
-- django-click
-- Docker
-- Docker Compose
-- environs[django]
-- psycopg2-binary
-- whitenoise
+-   Django 4.2.x
+-   django-click
+-   Docker
+-   Docker Compose
+-   environs[django]
+-   psycopg2-binary
+-   whitenoise
 
 ### :green_heart: CI
 
-- django-test-plus
-- model-bakery
-- pre-commit
-- pytest
-- pytest-cov
-- pytest-django
+-   django-test-plus
+-   model-bakery
+-   pre-commit
+-   pytest
+-   pytest-cov
+-   pytest-django
 
 ### 🏠 [Homepage](https://github.com/jefftriplett/django-startproject)
 
 ## :wrench: Install
 
 ```shell
-$ django-admin startproject \
+$ docker-compose run --rm web django-admin startproject \
     --extension=ini,py,toml,yaml,yml \
     --template=https://github.com/jefftriplett/django-startproject/archive/main.zip \
     example_project
@@ -72,9 +72,9 @@ $ docker-compose run --rm web pip-compile requirements/requirements.in
 
 👤 **Jeff Triplett**
 
-* Website: https://jefftriplett.com
-* Twitter: [@webology](https://twitter.com/webology)
-* Github: [@jefftriplett](https://github.com/jefftriplett)
+-   Website: https://jefftriplett.com
+-   Twitter: [@webology](https://twitter.com/webology)
+-   Github: [@jefftriplett](https://github.com/jefftriplett)
 
 ## 🤝 Contributing
 
