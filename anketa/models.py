@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Respondent(models.Model):
     """
@@ -8,6 +9,7 @@ class Respondent(models.Model):
 
     # Fields
     last_name = models.CharField(max_length=20, help_text="Фамилия респондента")
+
 
 class Anketa(models.Model):
     """
@@ -20,7 +22,8 @@ class Anketa(models.Model):
 
     # author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
 
-class Vopros(models.Model):
+
+class Question(models.Model):
     """
     Вопрос для анкеты
     """
@@ -29,7 +32,8 @@ class Vopros(models.Model):
     questionnaire_id = models.CharField(max_length=20, help_text="id Анкеты")
     name = models.CharField(max_length=20, help_text="Имя(название) вопроса")
 
-class Variant_Otveta(models.Model):
+
+class Answer(models.Model):
     """
     Варианты ответов для анкеты
     """
@@ -38,11 +42,12 @@ class Variant_Otveta(models.Model):
     name = models.CharField(max_length=20, help_text="Имя(название) ответов")
     question_id = models.CharField(max_length=20, help_text="id вопроса")
 
-class Otvet_na_vopros(models.Model):
+
+class RespondentAnswer(models.Model):
     """
-    Ответы на вопросы для анкеты
+    Ответы респондента на вопросы для анкеты
     """
 
     # Fields
+    respondent = models.ForeignKey("Respondent", on_delete=models.SET_NULL, null=False)
     answer_id = models.CharField(max_length=20, help_text="id ответа")
-    respondent_id = models.CharField(max_length=20, help_text="id респондента") 
