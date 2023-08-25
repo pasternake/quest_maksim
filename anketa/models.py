@@ -20,7 +20,6 @@ class Anketa(models.Model):
     name = models.CharField(max_length=20, help_text="Имя(название) анкеты")
     discription = models.CharField(max_length=20, help_text="Описание анкеты")
 
-    # author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
 
 
 class Question(models.Model):
@@ -29,7 +28,7 @@ class Question(models.Model):
     """
 
     # Fields
-    questionnaire_id = models.CharField(max_length=20, help_text="id Анкеты")
+    anketa = models.ForeignKey("Anketa", on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=20, help_text="Имя(название) вопроса")
 
 
@@ -40,7 +39,7 @@ class Answer(models.Model):
 
     # Fields
     name = models.CharField(max_length=20, help_text="Имя(название) ответов")
-    question_id = models.CharField(max_length=20, help_text="id вопроса")
+    question = models.ForeignKey("Question", on_delete=models.SET_NULL, null=True)
 
 
 class RespondentAnswer(models.Model):
@@ -49,5 +48,5 @@ class RespondentAnswer(models.Model):
     """
 
     # Fields
-    respondent = models.ForeignKey("Respondent", on_delete=models.SET_NULL, null=False)
-    answer_id = models.CharField(max_length=20, help_text="id ответа")
+    respondent = models.ForeignKey("Respondent", on_delete=models.SET_NULL, null=True)
+    answer = models.ForeignKey("Answer", on_delete=models.SET_NULL, null=True)
