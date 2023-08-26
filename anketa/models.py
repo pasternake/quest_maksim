@@ -10,6 +10,12 @@ class Respondent(models.Model):
     # Fields
     last_name = models.CharField(max_length=40, help_text="Фамилия респондента")
 
+    def __str__(self):
+        """
+        String for representing the MyModelName object (in Admin site etc.)
+        """
+        return self.last_name
+
 
 class Anketa(models.Model):
     """
@@ -20,6 +26,11 @@ class Anketa(models.Model):
     name = models.CharField(max_length=40, help_text="Имя(название) анкеты")
     discription = models.CharField(max_length=100, help_text="Описание анкеты")
 
+    def __str__(self):
+        """
+        String for representing the MyModelName object (in Admin site etc.)
+        """
+        return 'Анкета: ' + self.name
 
 
 class Question(models.Model):
@@ -31,6 +42,12 @@ class Question(models.Model):
     anketa = models.ForeignKey("Anketa", on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200, help_text="Имя(название) вопроса")
 
+    def __str__(self):
+        """
+        String for representing the MyModelName object (in Admin site etc.)
+        """
+        return self.name
+
 
 class Answer(models.Model):
     """
@@ -40,6 +57,12 @@ class Answer(models.Model):
     # Fields
     name = models.CharField(max_length=200, help_text="Имя(название) ответов")
     question = models.ForeignKey("Question", on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        """
+        String for representing the MyModelName object (in Admin site etc.)
+        """
+        return self.name
 
 
 class RespondentAnswer(models.Model):
