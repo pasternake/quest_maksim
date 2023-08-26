@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>Опросы</h1>
+
+<p>Welcome to <em>Вопросы</em></p>
+
+<h2>Динамическое содержимое</h2>
+
+<p>В опросе следующие показатели:</p>
+<ul>
+  <li><strong>Анкет:</strong> {{ num_anketa }}</li>
+  <li><strong>Вопросов:</strong> {{ num_question }}</li>
+  <li><strong>Ответов:</strong> {{ num_answer }}</li>
+  <li><strong>Респондентов:</strong> {{ num_respondent }}</li>
+</ul>
+
+{% endblock %}
