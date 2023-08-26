@@ -8,7 +8,7 @@ class Respondent(models.Model):
     """
 
     # Fields
-    last_name = models.CharField(max_length=20, help_text="Фамилия респондента")
+    last_name = models.CharField(max_length=40, help_text="Фамилия респондента")
 
 
 class Anketa(models.Model):
@@ -17,8 +17,8 @@ class Anketa(models.Model):
     """
 
     # Fields
-    name = models.CharField(max_length=20, help_text="Имя(название) анкеты")
-    discription = models.CharField(max_length=20, help_text="Описание анкеты")
+    name = models.CharField(max_length=40, help_text="Имя(название) анкеты")
+    discription = models.CharField(max_length=100, help_text="Описание анкеты")
 
 
 
@@ -29,7 +29,7 @@ class Question(models.Model):
 
     # Fields
     anketa = models.ForeignKey("Anketa", on_delete=models.SET_NULL, null=True)
-    name = models.CharField(max_length=20, help_text="Имя(название) вопроса")
+    name = models.CharField(max_length=200, help_text="Имя(название) вопроса")
 
 
 class Answer(models.Model):
@@ -38,7 +38,7 @@ class Answer(models.Model):
     """
 
     # Fields
-    name = models.CharField(max_length=20, help_text="Имя(название) ответов")
+    name = models.CharField(max_length=200, help_text="Имя(название) ответов")
     question = models.ForeignKey("Question", on_delete=models.SET_NULL, null=True)
 
 
