@@ -46,7 +46,7 @@ class Question(models.Model):
         """
         String for representing the MyModelName object (in Admin site etc.)
         """
-        return self.name
+        return self.name + ' ( Анкета: ' + self.anketa.name + ')'
 
 
 class Answer(models.Model):
@@ -62,7 +62,7 @@ class Answer(models.Model):
         """
         String for representing the MyModelName object (in Admin site etc.)
         """
-        return self.name
+        return self.name + ' ( Вопрос: ' + self.question.name + ') ( Анкета: ' + self.question.anketa.name + ')'
 
 
 class RespondentAnswer(models.Model):
