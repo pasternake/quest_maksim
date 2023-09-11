@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<form>
+  <h1>Вопрос 1 из 3:</h1>
+  <h1>******</h1>
+  <input type="radio" name="age" value="yes"> да<br>
+  <input type="radio" name="age" value="no"> нет<br>
+  <br />
+  <input type="submit" value="Следующий вопрос">
+</form>
+<form>
+  <h1>Вопрос 2 из 3:</h1>
+  <h1>******</h1>
+  <input type="radio" name="age" value="7:00"> 7:00<br>
+  <input type="radio" name="age" value="8:00"> 8:00<br>
+  <input type="radio" name="age" value="9:00"> 9:00<br>
+  <br />
+  <input type="submit" value="Следующий вопрос">
+</form>
+<form>
+  <h1>Вопрос 3 из 3:</h1>
+  <h1>******</h1>
+  <input type="radio" name="age" value="like"> нравится<br>
+  <input type="radio" name="age" value="don't like"> ненравится<br>
+  <br />
+  <input type="submit" value="Закончить опрос">
+</form>
+
+
+
+
+
+
+
+
+{% endblock %}
