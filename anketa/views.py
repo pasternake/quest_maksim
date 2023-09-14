@@ -34,3 +34,17 @@ def anketa(request):
         "anketa.html",
         context={},
     )
+
+def func_questions(request):
+    return render(
+        request,
+        "questions.html",
+        context={},
+    )
+
+def func_thankyou(request):
+    return render(
+        request,
+        "thankyou.html",
+        context={},
+    )
