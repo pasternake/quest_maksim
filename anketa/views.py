@@ -35,16 +35,30 @@ def anketa(request):
         context={},
     )
 
-def func_questions(request):
-    return render(
-        request,
-        "questions.html",
-        context={},
-    )
-
 def func_thankyou(request):
     return render(
         request,
         "thankyou.html",
+        context={},
+    )
+
+def func_questions1(request):
+    return render(
+        request,
+        "question1.html",
+        context={},
+    )
+
+def func_questions2(request):
+    return render(
+        request,
+        "question2.html",
+        context={},
+    )
+
+def func_questions3(request):
+    return render(
+        request,
+        "question3.html",
         context={},
     )
