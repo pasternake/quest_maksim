@@ -12,7 +12,9 @@
   <li><strong>Ответов:</strong> {{ num_answer }}</li>
   <li><strong>Респондентов:</strong> {{ num_respondent }}</li>
 </ul>
+{% for item in results %} {{item.name}} - {{item.description}} <br />
+{% endfor %}
 
-<a href="/anketa/anketa"><button> Анкета </button></a>
+<a href="/anketa/anketa"><button>Анкета</button></a>
 
 {% endblock %}
